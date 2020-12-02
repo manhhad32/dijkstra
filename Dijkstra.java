@@ -33,9 +33,8 @@ public class Dijkstra {
     double minDistance = 0;
     for (Vertex vertex = targetVertex; vertex != null; vertex = vertex.getPreviousVertex()) {
       path.add(vertex);
-      minDistance = minDistance + vertex.getMinDistance();
     }
-
+    minDistance = path.get(0).getMinDistance();
     Collections.reverse(path);
     return Pair.of(path, minDistance);
   }
